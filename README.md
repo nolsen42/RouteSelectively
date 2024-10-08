@@ -64,3 +64,12 @@ If you are using it like a router (or as a default gateway for your devices), ma
 If you want to redirect ALL your lan traffic to go through the client to send specific traffic to your endpoint, but don't want to make it into a router, what you can do is make the client linux box as a default gateway, then change your DHCP settings to tell all your devices that "this is the new gateway, connect to it". On the client side, you would keep the gateway the same.
 
 The end result: Your devices -> Router -> Client box -> Router -> WAN.
+
+
+## How to run script
+
+1. Discover the domains and CDNs you want to redirect. Inspect element networking tab is a helpful tool to find the CDNs you need. Another helpful tool is if you have a method to view DNS requests on your network like pi-hole.
+2. Add such domains and CDNs to the domains.txt file.
+3. Test if the routing is working using the tracert command.
+
+Make sure to run the python script with elevated privileges (sudo), which is required to modify ip routes.
