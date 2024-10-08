@@ -37,7 +37,7 @@ From my experiences, I always found Zerotier more flexible and versatile, nothin
 Assuming you got Zerotier on both ends connected to the network you created and its all ready to go, we will now make changes on the client side first.
 
 ### Exit node instructions
-1. Find your WAN interface and run the following command:
+1. Find your WAN interface and run the following command (replace <public-interface> with your WAN interface name):
 ``sudo iptables -t nat -A POSTROUTING -o <public-interface> -j MASQUERADE``
 
 2. open ``/etc/sysctl.conf`` and add the following lines:
@@ -57,6 +57,8 @@ That's pretty much it for the exit node, it's actually the easiest part.
 Now, we are going to create a new routing table, this will be used to store all the IPs that the script will run. Note: By default, these routes do not persist between boots, so you will need to run the python script each time.
 To do so:
 
+(Make sure you already have git installed)
+1. ``git clone https://github.com/nolsen42/RouteSelectively.git ; cd ~/RouteSelectively``
 1. run ``sudo nano /etc/iproute2/rt_tables``
 2. We want to add a new table at the end of the file, so we are going to add ``1001    zerotier``
 3. (Optional) If the client side is also routing traffic for multiple devices, like a router for example, add the following iptables line:
