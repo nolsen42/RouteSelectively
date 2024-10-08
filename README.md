@@ -35,7 +35,7 @@ From my experiences, I always found Zerotier more flexible and versatile, nothin
 2. Make sure you already have a [Zerotier Network](https://my.zerotier.com/) created and configured.
 (Further instructions regarding Zerotier can be found [on their documentation page](https://docs.zerotier.com/))
 
-Assuming you got Zerotier on both ends connected to the network you created and its all ready to go, we will now make changes on the client side first.
+Assuming you got Zerotier on both ends connected to the network you created and its all ready to go, we will now begin with the instructions below.
 
 I do recommend using iptables-persistent to save your iptables configuration, otherwise your MASQUERADE rules will be lost upon boot.
 
