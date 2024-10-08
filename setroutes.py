@@ -1,12 +1,5 @@
 import subprocess
 
-# Add the domains you want to redirect to your endpoint here
-domains = [
-    "example1.com",
-    "example2.com",
-    "example3.com"
-]
-
 # ZeroTier info
 exit_node_ip = "enter.your.zerotier.endpoint.ip"
 interface = "ztly5x7b3u" # Edit this if needed.
@@ -54,11 +47,9 @@ def main():
     
     file_domains = read_domains_from_file(filename)
     
-    all_domains = domains + file_domains
-    
     domain_count = 0
     
-    for domain in all_domains:
+    for domain in file_domains:
         print(f"Resolving IPs for {domain}:")
         ips = resolve_ip(domain)
         for ip in ips:
