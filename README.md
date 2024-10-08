@@ -1,5 +1,5 @@
 # RouteSelectively
-Python script (with instructions) on bypassing specific websites/domains to various zerotier endpoints.
+Python script designed to help route specific websites/domains/CDNs to various zerotier endpoints, while allowing everything else go through your internet as normal.
 
 ## How it works
 Using a combination of iptables and ip routes, you can add the IPs of domains/cdns/websites/etc to route through a specific zerotier endpoint. The flexibility allows you to have the option of have multiple endpoints, while leaving the rest of your internet traffic as normal.
