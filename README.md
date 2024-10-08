@@ -6,7 +6,7 @@ Using a combination of iptables and ip routes, you can add the IPs of domains/cd
 
 ## Why Zerotier?
 
-From my experiences, I always found Zerotier more flexible and versatile, nothing more I can say here.
+From my experiences, I always found Zerotier more flexible and versatile. Plus with ZeroTier, you don't have to worry about port forwarding, or dynamic IP headaches. Zerotier has that plug-in-play which is neat.
 
 ## Example use-cases
 
