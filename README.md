@@ -57,6 +57,7 @@ To do so:
 2. We want to add a new table at the end of the file, so we are going to add ``1001    zerotier``
 3. (Optional) If the client side is also routing traffic for multiple devices, like a router for example, add the following iptables line:
 ```sudo iptables -t nat -A POSTROUTING -o ztly5x7b3u -j MASQUERADE``` (Replace ztly5x7b3u with your zerotier interface)
+If you are using it like a router (or as a default gateway for your devices), make sure you have set the ip_forward rules found in the Exit node instructions.
 
 ### Additional set-up tips
 
