@@ -36,6 +36,8 @@ From my experiences, I always found Zerotier more flexible and versatile, nothin
 (Further instructions regarding Zerotier can be found [on their documentation page](https://docs.zerotier.com/))
 Assuming you got Zerotier on both ends connected to the network you created and its all ready to go, we will now make changes on the client side first.
 
+I do recommend using iptables-persistent to save your iptables configuration, otherwise your MASQUERADE rules will be lost upon boot.
+
 ### Exit node instructions
 1. Find your WAN interface and run the following command (replace <public-interface> with your WAN interface name):
 ``sudo iptables -t nat -A POSTROUTING -o <public-interface> -j MASQUERADE``
