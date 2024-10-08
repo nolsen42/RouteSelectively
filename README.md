@@ -88,3 +88,11 @@ Make sure to run the python script with elevated privileges (sudo), which is req
 * Have one setroutes.py called ``setroutes_netflix.py``, and ``domains_netflix.txt`` for domain file, then populate it with all the netflix CDNs and domains.
 * Have one setroutes.py called ``setroutes_adult.py``, and ``domains_adult.txt`` for domain file, then populate it with all the domains, CDNs, etc, regarding adult websites (as a category basically rather than an individual website).
 * Have either one of those above (or in general) but with a separate zerotier endpoint. Netflix goes to one zerotier endpoint, adult goes to a different endpoint, etc.
+
+## Will you be providing a list of CDNs and domains to make it easier for us?
+
+As much as I would like to, I am not sure if Github, netflix, adult websites, hulu, disney+, etc, will throw a fit and try to shutdown this repo (or send me an angry letter)
+
+## Doesn't this violate Netflix's ToS?
+
+Most likely, yes. Do I care? No. Should you care? That's up to you to decide, while I cannot assure you with a 100% guarantee, the likelihood of being banned for this is low (but not zero). This can be said with any other website out there. **Use this at your own risk. I am not responsible if you get spanked by the streaming platforms for this.**
