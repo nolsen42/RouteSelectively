@@ -4,6 +4,10 @@ Python script (with instructions) on bypassing specific websites/domains to vari
 ## How it works
 Using a combination of iptables and ip routes, you can add the IPs of domains/cdns/websites/etc to route through a specific zerotier endpoint. The flexibility allows you to have the option of have multiple endpoints, while leaving the rest of your internet traffic as normal.
 
+## Why Zerotier?
+
+From my experiences, I always found Zerotier more flexible and versatile, nothing more I can say here.
+
 ## Example use-cases
 
 * Bypassing Netflix's password sharing crackdown and blocks, by redirecting netflix CDNs and domains to a different zerotier endpoint.
@@ -73,3 +77,14 @@ The end result: Your devices -> Router -> Client box -> Router -> WAN.
 3. Test if the routing is working using the tracert command.
 
 Make sure to run the python script with elevated privileges (sudo), which is required to modify ip routes.
+
+## Additional notes
+
+1. There can be around 52 or more netflix domains and CDNs.
+2. It is recommended that you make a separate domains.txt and setroutes.py for every website or category you want to redirect. See examples below on what I mean.
+
+### Examples
+
+* Have one setroutes.py called ``setroutes_netflix.py``, and ``domains_netflix.txt`` for domain file, then populate it with all the netflix CDNs and domains.
+* Have one setroutes.py called ``setroutes_adult.py``, and ``domains_adult.txt`` for domain file, then populate it with all the domains, CDNs, etc, regarding adult websites (as a category basically rather than an individual website).
+* Have either one of those above (or in general) but with a separate zerotier endpoint. Netflix goes to one zerotier endpoint, adult goes to a different endpoint, etc.
