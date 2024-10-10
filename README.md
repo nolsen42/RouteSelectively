@@ -6,7 +6,13 @@ Using a combination of iptables and ip routes, you can add the IPs of domains/cd
 
 ## Why Zerotier?
 
-From my experiences, I always found Zerotier more flexible and versatile. Plus with ZeroTier, you don't have to worry about port forwarding, or dynamic IP headaches. Zerotier has that plug-in-play which is neat.
+From my experiences, I always found Zerotier more flexible and versatile. Plus with ZeroTier, you don't have to worry about port forwarding, or dynamic IP headaches. Zerotier has that plug-in-play, and pretty good performance.
+
+## Why use this over just having a traditional VPN?
+
+The advantage of using this script is the ability to allow ALL your devices in your house to be able to access the blocked or restricted websites and services without having to turn on/off a VPN. Some devices don't even have VPN support at all.
+Some websites, like banks, also do not like VPNs and will be annoying whenever you use one. Split tunneling isn't supported by all devices either.
+So with this, you can keep all your traffic going through your internet like normal, but have specific websites and platforms through zerotier. The best of both worlds.
 
 ## Example use-cases
 
