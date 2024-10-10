@@ -23,7 +23,7 @@ From my experiences, I always found Zerotier more flexible and versatile. Plus w
 
 ## Requirements
 
-* A linux box running Zerotier. The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds.
+* A linux box running Zerotier. The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds for best results. Weaker systems like RPi 3b (or newer) could work too if all you are doing is streaming and don't care about the fastest possible speeds.
 * A zerotier network already set up and running.
 * An endpoint the Zerotier client (with the ip routes set) will connect to send the traffic over to. Could be VPSes, another linux box at a different location, etc.
 
