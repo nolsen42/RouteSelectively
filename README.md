@@ -29,6 +29,8 @@ From my experiences, I always found Zerotier more flexible and versatile. Plus w
 
 ## How-to setup
 
+This has been battle tested on Ubuntu 24.04(.1), which is what I use for literally everything, so whether it works on other distros or older Ubuntu versions has not been verified by me.
+
 **DISCLAIMER: I AM NOT RESPONSIBLE IF YOU SCREW UP YOUR FIREWALL, IPTABLES, IP ROUTING CONFIGURATION, OR REALLY ANYTHING NOT MENTIONED, IF IT HAPPENS TO GO WRONG. MAKE SURE YOU UNDERSTAND WHAT YOU ARE DOING, WHAT YOU ARE RUNNING, MADE BACKUPS OF YOUR IPTABLES, ETC. YOU HAVE BEEN WARNED.**
 
 1. Make sure you have installed [Zerotier](https://www.zerotier.com/download/) onto the client, and on to the endpoint you will be using.
