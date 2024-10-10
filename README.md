@@ -31,7 +31,7 @@ So with this, you can keep all your traffic going through your internet like nor
 
 Terminology (For those that are confused): Client side = Your house or location; The machine that will be intercepting your home traffic to send it out to the endpoint.
 
-* For the client side, you will need a linux machine running ZeroTier. The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds.
+* For the client side, you will need a linux machine running ZeroTier. If you are using this with a box designated as a default gateway/router: The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds. Anything weaker can hurt your overall internet performance, zerotier or not, since ALL of your home traffic would be routed through this.
 * An endpoint the ZeroTier client (with the ip routes set) will connect to send the traffic over to. Could be a VPS, or another linux box at a different location, etc. Weaker systems like RPi 3b (or newer) can work too if all you are doing is streaming and don't care about the fastest possible speeds.
 * A ZeroTier network already set up and running.
 
@@ -74,9 +74,10 @@ To do so:
 1. ``git clone https://github.com/nolsen42/RouteSelectively.git ; cd ~/RouteSelectively``
 1. run ``sudo nano /etc/iproute2/rt_tables``
 2. We want to add a new table at the end of the file, so we are going to add ``1001    ZeroTier``
-3. (Optional) If the client side is also routing traffic for multiple devices, like a router for example, add the following iptables line:
+3. If the client side is also routing traffic for multiple devices, like a router or default gateway for example, add the following iptables line:
 ```sudo iptables -t nat -A POSTROUTING -o ztly5x7b3u -j MASQUERADE``` (Replace ztly5x7b3u with your ZeroTier interface)
-If you are using it like a router (or as a default gateway for your devices), make sure you have set the ip_forward rules found in the Exit node instructions.
+
+Make sure you have set the ip_forward rules found in the Exit node instructions for your LAN devices to connect.
 
 ### Additional set-up tips
 
