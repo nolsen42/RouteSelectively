@@ -1,22 +1,22 @@
 # RouteSelectively
-Python script designed to help route specific websites/domains/CDNs to various zerotier endpoints, while allowing everything else go through your internet as normal.
+Python script designed to help route specific websites/domains/CDNs to various ZeroTier endpoints, while allowing everything else go through your internet as normal.
 
 ## How it works
-Using a combination of iptables and ip routes, you can add the IPs of domains/cdns/websites/etc to route through a specific zerotier endpoint. The flexibility allows you to have the option of have multiple endpoints, while leaving the rest of your internet traffic as normal.
+Using a combination of iptables and ip routes, you can add the IPs of domains/cdns/websites/etc to route through a specific ZeroTier endpoint. The flexibility allows you to have the option of have multiple endpoints, while leaving the rest of your internet traffic as normal.
 
-## Why Zerotier?
+## Why ZeroTier?
 
-From my experiences, I always found Zerotier more flexible and versatile. Plus with ZeroTier, you don't have to worry about port forwarding, or dynamic IP headaches. Zerotier has that plug-in-play, and pretty good performance.
+From my experiences, I always found ZeroTier more flexible and versatile. Plus with ZeroTier, you don't have to worry about port forwarding, or dynamic IP headaches. ZeroTier has that plug-in-play, and pretty good performance.
 
 ## Why use this over just having a traditional VPN?
 
 The advantage of using this script is the ability to allow ALL your devices in your house to be able to access the blocked or restricted websites and services without having to turn on/off a VPN. Some devices don't even have VPN support at all.
 Some websites, like banks, also do not like VPNs and will be annoying whenever you use one. Split tunneling isn't supported by all devices either.
-So with this, you can keep all your traffic going through your internet like normal, but have specific websites and platforms through zerotier. The best of both worlds.
+So with this, you can keep all your traffic going through your internet like normal, but have specific websites and platforms through ZeroTier. The best of both worlds.
 
 ## Example use-cases
 
-* Bypassing Netflix's password sharing crackdown and blocks, by redirecting netflix CDNs and domains to a different zerotier endpoint.
+* Bypassing Netflix's password sharing crackdown and blocks, by redirecting netflix CDNs and domains to a different ZeroTier endpoint.
 * Bypass adult content restrictions imposed in several US states (which is requiring your ID to view content).
 * Future proofing when other streaming service follows Netflix's strategy on password sharing crackdown.
 
@@ -29,9 +29,9 @@ So with this, you can keep all your traffic going through your internet like nor
 
 ## Requirements
 
-* A linux box running Zerotier. The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds.
-* An endpoint the Zerotier client (with the ip routes set) will connect to send the traffic over to. Could be a VPS, or another linux box at a different location, etc. Weaker systems like RPi 3b (or newer) can work too if all you are doing is streaming and don't care about the fastest possible speeds.
-* A zerotier network already set up and running.
+* A linux box running ZeroTier. The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds.
+* An endpoint the ZeroTier client (with the ip routes set) will connect to send the traffic over to. Could be a VPS, or another linux box at a different location, etc. Weaker systems like RPi 3b (or newer) can work too if all you are doing is streaming and don't care about the fastest possible speeds.
+* A ZeroTier network already set up and running.
 
 ## How-to setup
 
@@ -39,11 +39,11 @@ This has been battle tested on Ubuntu 24.04(.1), which is what I use for literal
 
 **DISCLAIMER: I AM NOT RESPONSIBLE IF YOU SCREW UP YOUR FIREWALL, IPTABLES, IP ROUTING CONFIGURATION, OR REALLY ANYTHING NOT MENTIONED, IF IT HAPPENS TO GO WRONG. MAKE SURE YOU UNDERSTAND WHAT YOU ARE DOING, WHAT YOU ARE RUNNING, MADE BACKUPS OF YOUR IPTABLES, ETC. YOU HAVE BEEN WARNED.**
 
-1. Make sure you have installed [Zerotier](https://www.zerotier.com/download/) onto the client, and on to the endpoint you will be using.
-2. Make sure you already have a [Zerotier Network](https://my.zerotier.com/) created and configured.
-(Further instructions regarding Zerotier can be found [on their documentation page](https://docs.zerotier.com/))
+1. Make sure you have installed [ZeroTier](https://www.ZeroTier.com/download/) onto the client, and on to the endpoint you will be using.
+2. Make sure you already have a [ZeroTier Network](https://my.ZeroTier.com/) created and configured.
+(Further instructions regarding ZeroTier can be found [on their documentation page](https://docs.ZeroTier.com/))
 
-Assuming you got Zerotier on both ends connected to the network you created and its all ready to go, we will now begin with the instructions below.
+Assuming you got ZeroTier on both ends connected to the network you created and its all ready to go, we will now begin with the instructions below.
 
 I do recommend using iptables-persistent to save your iptables configuration, otherwise your MASQUERADE rules will be lost upon boot.
 
@@ -71,9 +71,9 @@ To do so:
 (Make sure you already have git installed)
 1. ``git clone https://github.com/nolsen42/RouteSelectively.git ; cd ~/RouteSelectively``
 1. run ``sudo nano /etc/iproute2/rt_tables``
-2. We want to add a new table at the end of the file, so we are going to add ``1001    zerotier``
+2. We want to add a new table at the end of the file, so we are going to add ``1001    ZeroTier``
 3. (Optional) If the client side is also routing traffic for multiple devices, like a router for example, add the following iptables line:
-```sudo iptables -t nat -A POSTROUTING -o ztly5x7b3u -j MASQUERADE``` (Replace ztly5x7b3u with your zerotier interface)
+```sudo iptables -t nat -A POSTROUTING -o ztly5x7b3u -j MASQUERADE``` (Replace ztly5x7b3u with your ZeroTier interface)
 If you are using it like a router (or as a default gateway for your devices), make sure you have set the ip_forward rules found in the Exit node instructions.
 
 ### Additional set-up tips
@@ -100,7 +100,7 @@ Make sure to run the python script with elevated privileges (sudo), which is req
 
 * Have one setroutes.py called ``setroutes_netflix.py``, and ``domains_netflix.txt`` for domain file, then populate it with all the netflix CDNs and domains.
 * Have one setroutes.py called ``setroutes_adult.py``, and ``domains_adult.txt`` for domain file, then populate it with all the domains, CDNs, etc, regarding adult websites (as a category basically rather than an individual website).
-* Have either one of those above (or in general) but with a separate zerotier endpoint. Netflix goes to one zerotier endpoint, adult goes to a different endpoint, etc.
+* Have either one of those above (or in general) but with a separate ZeroTier endpoint. Netflix goes to one ZeroTier endpoint, adult goes to a different endpoint, etc.
 
 ## Will you be providing a list of CDNs and domains to make it easier for us?
 
