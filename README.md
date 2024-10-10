@@ -29,7 +29,7 @@ So with this, you can keep all your traffic going through your internet like nor
 
 ## Requirements
 
-Terminology (For those that are confused): Client side = Your house or location; The machine that will be intercepting your home traffic.
+Terminology (For those that are confused): Client side = Your house or location; The machine that will be intercepting your home traffic to send it out to the endpoint.
 
 * For the client side, you will need a linux machine running ZeroTier. The hardware doesn't need to be anything fancy, just needs to be capable of atleast outputting and sustaining gigabit internet speeds.
 * An endpoint the ZeroTier client (with the ip routes set) will connect to send the traffic over to. Could be a VPS, or another linux box at a different location, etc. Weaker systems like RPi 3b (or newer) can work too if all you are doing is streaming and don't care about the fastest possible speeds.
