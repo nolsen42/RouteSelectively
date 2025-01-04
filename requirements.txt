@@ -1,0 +1,4 @@
+tqdm
+validators
+requests
+bs4
