@@ -1,7 +1,7 @@
 # RouteSelectively
 Python script designed to help route specific websites/domains/CDNs to various ZeroTier endpoints, while allowing everything else go through your internet as normal.
 
-Still works and maintained as of 1/4/25
+Still works and maintained as of 2/18/25
 
 ## How it works
 Using a combination of iptables and ip routes, you can add the IPs of domains/cdns/websites/etc to route through a specific ZeroTier endpoint. The flexibility allows you to have the option of have multiple endpoints, while leaving the rest of your internet traffic as normal.
