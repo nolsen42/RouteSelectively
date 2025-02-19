@@ -110,7 +110,7 @@ Make sure to run the python script with elevated privileges (sudo), which is req
 
 ## Will you be providing a list of CDNs and domains to make it easier for us?
 
-As much as I would like to, I am not sure if Github, netflix, adult websites, hulu, disney+, etc, will throw a fit and try to shutdown this repo (or send me an angry letter)
+To avoid risking this repo being deleted by DMCAs from sites, I cannot include them. Netflix also uses ISP specific CDNs that will vary depending on the location your exit node is. 
 
 ## Doesn't this violate Netflix's ToS?
 
