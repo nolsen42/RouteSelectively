@@ -113,4 +113,4 @@ As much as I would like to, I am not sure if Github, netflix, adult websites, hu
 
 ## Doesn't this violate Netflix's ToS?
 
-Most likely, yes. Do I care? No. Should you care? That's up to you to decide, while I cannot assure you with a 100% guarantee, the likelihood of being banned for this is low (but not zero). This can be said with any other website out there. **Use this at your own risk. I am not responsible if you get spanked by the streaming platforms for this.**
+Technically yes, but the chances of you getting caught is pretty low (if not zero). With that being said, you are to use this tool at your own risk.
