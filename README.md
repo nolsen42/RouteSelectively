@@ -98,8 +98,9 @@ Make sure to run the python script with elevated privileges (sudo), which is req
 
 ## Additional notes
 
-1. There can be around 52 or more netflix domains and CDNs.
+1. There can be around 70 or more domains and CDNs used by netflix
 2. It is recommended that you make a separate domains.txt and setroutes.py for every website or category you want to redirect. See examples below on what I mean.
+3. Some websites will have changing IPs while keeping the same domain. If this happens, you will need to re-run this script again.
 
 ### Examples
 
